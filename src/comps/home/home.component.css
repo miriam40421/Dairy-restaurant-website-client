@@ -1,0 +1,22 @@
+.i{
+    top:0;
+    width: 100px;
+    z-index: 99;
+ }
+.d{
+    
+    top:0;
+    z-index: 100;
+}
+body{
+    background-image: url("../../../public//1/bigBite.png");
+    size: 50%;
+    text-align: center;
+}
+button{
+    color: red;
+    background-color: black;
+    border-radius: 5px;
+width: 100px;
+height: 50px;
+font-size: x-large;}

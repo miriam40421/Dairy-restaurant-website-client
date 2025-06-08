@@ -1,0 +1,39 @@
+div{
+    align-items: center;
+    text-align: center;
+}
+img{
+    box-shadow: 0px 0px 10px 3px rgba(29, 28, 28, 0.77);
+    border-radius: 6px;
+    width: 400px;
+    height: 290px;
+}
+button{
+    border-color: aliceblue;
+}
+i{
+    
+  
+   }
+   #cart{
+    margin-left: 50px;
+    /* margin-top: 20px; */
+    font-size: xx-large;
+    border: rgb(245 245 245);
+    padding-right: 250px;
+
+   }
+   #back{
+    margin-left:90%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+   }
+   /* #all{
+    margin-right: 37%;
+    max-width: 30%;
+    /* margin-left: 90%; */
+    /* box-shadow: 0px 0px 10px 3px rgba(213, 10, 10, 0.77); */
+
+    /* border: 2px double red; */
+    /* width: 50%; */
+   /* }  */

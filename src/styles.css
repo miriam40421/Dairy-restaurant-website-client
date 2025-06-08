@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+   cursor: pointer;
+    
+}
+
+ #allp{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+ }
+ /* #h4{
+  margin-top:10px ;
+} */
+ #but{
+    border: rgb(245 245 245);
+  
+  }
+  i{
+    font-size: xx-large;
+    border: rgb(245 245 245);
+  
+   }
+   #sort{
+    margin: 10px;
+    width: 110px;
+    /* margin-right: 20px; */
+    box-shadow: 0px 0px 10px 3px rgba(29, 28, 28, 0.77);
+    border-radius: 10px;
+    border-color: aliceblue;
+  }

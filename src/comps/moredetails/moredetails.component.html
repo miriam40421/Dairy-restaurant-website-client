@@ -1,0 +1,22 @@
+<br>
+<i class="fa-solid fa-shopping-cart" (click)="show()" id="cart"></i>
+<app-button myClass="fa-solid fa-arrow-circle-right" (myFunc)="back()" id="cart" id="back"></app-button>
+<div id="all">
+
+    <h1>{{p.name}}
+    </h1>
+    <div id="alldiv">
+
+        <p><img [src]="p.img"></p>
+        <p>{{p.prodDesc}}</p>
+        <p>{{p.cost|currency:'ILS'}}</p>
+        @if(p.count!>0){
+        <p> לקחתי{{ p.count}}</p>}
+
+        <p>{{p.lastDateUpdate}}</p>
+    </div>
+    <button id="but" (click)="AddtoCart()" [disabled]="p.oty!<=0"><i class="fa-solid fa-plus-circle"></i></button>
+    <button id="but" (click)="deleteC()" [disabled]="p.count!<=0"><i class="fa-solid fa-minus-circle"></i></button>
+    <br>
+
+</div>

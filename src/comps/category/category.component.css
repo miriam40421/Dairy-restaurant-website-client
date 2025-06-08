@@ -1,0 +1,94 @@
+  #allCat{
+    left:initial ;
+   border: 3px solid black;
+      display: flex;
+     flex-wrap: wrap; 
+     justify-content: center;
+     
+ }
+ h4{
+    color:black
+ }
+ 
+ .cardiv{
+  height: 200px;
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  margin: 40px;
+  box-shadow: 0px 0px 10px 3px rgba(29, 28, 28, 0.77);
+  border-radius: 10px;
+  background-color: rgb(245 245 245);
+  align-items: center;
+ }
+#cart{
+margin-top: 10px;
+
+}
+ 
+ #bb{
+  border: rgb(245 245 245);
+
+ }
+ #cat{
+  color: red;
+ }
+
+img{
+  width: 300px;
+  height: 200px;
+}
+#all {
+  
+  margin-left: 65px;
+  flex:4;
+}
+.bad {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+  margin: 30px;
+  box-shadow: 0px 0px 10px 3px rgb(194 33 26 / 77%);
+  border-radius: 10px;
+  background-color: rgb(245 245 245);
+  align-items: center;
+  float: left;
+
+}
+img{
+  width: 200px;
+}
+#pic {
+  width: 150px;
+} 
+#alldiv{
+  display:flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  align-items: center;
+}
+#sort{
+  width: 110px;
+  margin-right: 7%;
+  box-shadow: 0px 0px 10px 3px rgba(29, 28, 28, 0.77);
+  border-radius: 10px;
+  border-color: aliceblue;
+}
+
+select{
+  /* width: 110px; */
+  margin-right: 20px;
+  box-shadow: 0px 0px 10px 3px rgba(29, 28, 28, 0.77);
+  border-radius: 10px;
+  border-color: aliceblue;
+  border-radius: 10px;
+}
+#ss{
+  margin-top: 2%;
+  display: flex;
+}
+#h4{
+  margin-top:10px ;
+}

@@ -1,0 +1,40 @@
+<i class="fa-duotone fa-solid fa-user-plus" (click)="togglePopup()"></i>
+
+@if(isPopupVisible){
+<div class="overlay-container">
+
+
+    <div class="popup-box">
+        <h2 class="h2">הרשמה</h2>
+        <label class="form-label" for="myId">מספר זהות</label>
+        <input class="form-input" type="text" placeholder="Enter Your Username" id="name" name="myId"
+            [(ngModel)]="newC.custId" pattern="[\d]{8,9}" required #aID="ngModel">
+        @if(aID.invalid && (aID.dirty||aID.touched))
+        {
+        <p [hidden]="!aID.errors!['required']">שדה חובה</p>
+        <p [hidden]="!aID.errors!['pattern']">תעודת זהות לא תקינה</p>
+        }
+        <label class="form-label" for="name">שם</label>
+        <input class="form-input" type="text" placeholder="Enter Your Username" id="name" name="name"
+            [(ngModel)]="newC.custName" required>
+        <label class="form-label" for="email">כתובת אימייל</label>
+        <input class="form-input" type="email" placeholder="Enter Your Email" id="email" name="email"
+            [(ngModel)]="newC.custFax" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #cemail="ngModel">
+
+        @if(cemail.invalid&&(cemail.dirty||cemail.touched))
+        {
+        <p [hidden]="!cemail.errors!['pattern']">הכנס כתובת אימייל תקינה</p>
+        }
+        <label class="form-label" for="phone">:מספר פלאפון</label>
+        <input class="form-input" type="text" placeholder="Enter Your Username" id="name" name="phone"
+            [(ngModel)]="newC.custPhone" required>
+        <label class="form-label" for="d">תאריך לידה</label>
+        <input class="form-input" type="date" placeholder="Enter Your Username" id="name" name="d"
+            [(ngModel)]="newC.dateOfBirth" required>
+        <button class="btn-submit" (click)="onSubmit()">שמירה</button>
+
+
+        <button class="btn-close-popup" (click)="togglePopup()">Close</button>
+    </div>
+</div>
+}

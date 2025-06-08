@@ -1,0 +1,68 @@
+@if(this.listDetails.AllDetails.length>0){
+
+<div class="container mt-3">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>קוד</th>
+                <th>שם</th>
+                <th>תמונה</th>
+                <th>כמות </th>
+                <th>מחיר</th>
+                <th>אפשרויות</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @for(p of this.listDetails.AllDetails; track p.Prod?.prodId){
+            @if(p.qty!>0){
+            <tr>
+                <td>{{p.Prod?.prodId}}</td>
+                <td>{{p.Prod?.name}}</td>
+                <td> <img [src]="p.Prod?.img"></td>
+                <td>{{p.qty}}</td>
+                <td>{{p.Prod?.cost!*p.qty!}} </td>
+                <td><button id="but" (click)="AddtoCart(p.Prod!)" [disabled]="p.Prod?.oty!<1"><i
+                            class="fa-solid fa-plus-circle"></i></button>
+                    <button id="but" (click)="deleteC(p.Prod!)" [disabled]="p.qty!<1"><i
+                            class="fa-solid fa-minus-circle"></i></button>
+
+                    <button id="but" (click)="deleteAll(p.Prod?.prodId!)"><i class="fa-solid fa-trash-alt"></i></button>
+                </td>
+
+            </tr>} }
+        </tbody>
+    </table>
+
+</div>
+@if(!this.f){
+<h3 id="p"> הסכום לפני הנחות הוא:{{this.allpr.sum}}</h3>
+<h4 id="h4">סה"כ כמות המוצרים:{{this.allpr.sum1}}</h4>
+}
+<div id="d">
+
+    <button id="pay" (click)="chekId()">לתשלום</button>
+    @if(this.flag==true){
+
+    <input value="0" type="text" [(ngModel)]="this.mytz" placeholder="הכנס ת.ז" id="sort" name="nametz"
+        (blur)="login(this.mytz!)">
+    }
+
+
+</div>
+@if(this.f){
+<h3 id="p"> הסכום אחרי הנחות הוא:{{this.allpr.sum}}</h3>
+<div id="d">
+    <button id="pay" class="p" (click)="pay()">לאישור התשלום</button>
+</div>
+}
+}
+@else {
+<div id="zero">
+    <br>
+    <p> עגלת המוצרים שלך ריקה</p>
+    <p> קנה ממגון המוצרים שלנו ותהנה!!!!</p>
+    <br>
+</div>
+}

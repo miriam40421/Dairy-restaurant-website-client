@@ -1,0 +1,57 @@
+<div id="allCat">
+  @for (i of AllCategory; track i.catId) {
+
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a appColor class="nav-link" data-bs-toggle="tab" id="cat" (click)="sortC(i.catId!)">{{i.name}}</a>
+    </li>
+  </ul>
+
+  <br>
+  }
+  <span class="nav-link" (click)="get()"> כל המוצרים </span>
+  <i class="fa-solid fa-shopping-cart" (click)="show()" id="cart"></i>
+  <h4 id="h4">{{this.Allpruc.sum1}}</h4>
+
+</div>
+
+<div id="si">
+
+  <div id="ss">
+    <h4>מיונים:</h4>
+    <select [(ngModel)]="chosenMod" (ngModelChange)="modo()" id="selectid" class="form-control-mb-12">
+      <option value="mod1">מיון לפי שם קטגוריה</option>
+      <option value="mod2">מיון לפי עדכון אחרון</option>
+      <option value="mod3">מיון לפי מחיר</option>
+    </select>
+  </div>
+  <input type="text" class="nav nav-pills" [(ngModel)]="this.cost" placeholder="סנן לפי מחיר" name="nametz"
+    (blur)="getByCategory()" id="sort">
+</div>
+@if(this.Allpruc.Allp2.length>0){
+<div id="alldiv">
+  @for(p of this.Allpruc.Allp2; track p.prodId){
+
+  <div [ngClass]="p.oty==0?'bad':'cardiv'">
+    <div id="pic">
+      <img [src]="p.img" (click)="more(p.prodId!) ">
+    </div>
+    <div id="all">
+      <h4 class="card-title">{{p.name}}</h4>
+
+      <h4 class="card-title">{{p.cost|currency:'ILS'}}</h4>
+      @if(p.count!>0){
+      <h4 class="card-title">לקחתי {{p.count}}</h4>
+      <!-- <h4 class="card-title">יש {{p.oty}}</h4> -->
+      }
+      <button id="but" (click)="AddtoCart(p)" [disabled]="p.oty!<1">
+        <i class="fa-solid fa-plus-circle"></i></button>
+      <button id="but" (click)="deleteC(p)" [disabled]="p.count!<=0"><i class="fa-solid fa-minus-circle"></i></button>
+    </div>
+  </div>
+
+  }
+</div>
+
+}
+<router-outlet></router-outlet>
